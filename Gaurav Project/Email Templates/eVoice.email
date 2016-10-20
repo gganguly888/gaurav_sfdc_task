@@ -1,0 +1,35 @@
+<messaging:emailTemplate subject="Invoice" recipientType="User" relatedToType="Members_Expense__c">
+    <messaging:attachment renderAs="PDF" filename="Invoice.pdf">
+            <html>
+                <head/>
+                <body>
+                <table border="2"  width="600px" Class="center" >
+                  <tr>
+                     <td>Name</td>
+                     <td>{!relatedTo.Member__r.Name}</td>
+                  </tr>
+                  <tr>
+                     <td>Total Event cost</td>
+                     <td>{!relatedTo.Expense__r.Amount__c} </td>
+                  </tr>
+                  <tr>
+                    <td>Your Contribution</td>
+                    <td>{!relatedTo.Contributed_Amount__c} </td>
+                  </tr>
+                  <tr>
+                    <td>Event</td>
+                    <td>{!relatedTo.Expense__r.Name} </td>
+                  </tr>
+                  <tr>
+                    <td>Date</td>
+                    <td>{!relatedTo.Expense__r.Event_Date__c} </td>
+                  </tr>
+                </table>      
+            </body>
+        </html>
+    </messaging:attachment>
+    <messaging:plainTextEmailBody >
+        Thanks for your contribution !
+        This is your bill, details mentioned in PDF..
+    </messaging:plainTextEmailBody>
+</messaging:emailTemplate>

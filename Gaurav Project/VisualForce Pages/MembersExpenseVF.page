@@ -1,0 +1,18 @@
+<apex:page sidebar="false"  controller="MembersExpenseVFController" action="{!justView}">
+    <apex:form >
+        <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    Expense : <apex:inputText />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Member's Name : <apex:inputText />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    Contributed Amount : <apex:inputText />
+                </apex:pageBlockSectionItem>  
+                <apex:pageBlockSectionItem >
+                    Recipient Email : <apex:inputText />
+                </apex:pageBlockSectionItem>  
+        </apex:pageBlockSection>               
+    </apex:form>
+</apex:page>

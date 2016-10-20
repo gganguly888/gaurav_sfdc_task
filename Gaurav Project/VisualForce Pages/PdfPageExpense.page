@@ -1,0 +1,13 @@
+<apex:page standardController="Expense__c" renderAs="pdf" extensions="ExpenseEXT" >
+    <h1 style="color:#229562; text-align: center;">REIMBURSEMENT INVOICE</h1>
+    <p style="font:20px;">Expense During {!Expense__c.Name} amounting to {!Expense__c.Amount__c}</p>
+    Total Amount :: {!Expense__c.Amount__c}<br/>
+    Total Contributed Amount :: {!Expense__c.Total_Contribution__c}<br/><br/>
+    Event Date :: {!Expense__c.Event_Date__c}<br/>
+    Event Name :: {!Expense__c.Name}<br/><br/>
+    <p style="font:20px;">The Contributers for the event are :: </p><br/>
+    <apex:repeat value="{!memExp}" var="i">
+        {!i.Member__r.Name}
+        {!i.Contributed_Amount__c}<br/>
+    </apex:repeat>
+</apex:page>
